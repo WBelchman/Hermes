@@ -1,0 +1,52 @@
+body {
+    width:100vw;
+    height:100vh;
+    background-color: rgb(69,69,69);
+}
+
+.root {
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#connectdiv {
+    justify-content: center;
+    align-items: center;
+}
+#chatdiv {
+    justify-content:flex-end;
+    align-items: left;
+}
+
+input, textarea {
+    background-color: rgb(50,50,50);
+    color: rgb(23, 218, 5);
+    border-radius: 2px;
+    border-color: orange;
+    border-style: solid;
+} 
+
+#con_id {
+    width:200px;
+    height:20px;
+}
+
+.noselect:focus {
+    outline:none;
+}
+
+#connectbtn {
+    width: 80px;
+    height: 30px;
+    margin: 20px;
+}
+
+#chatbox {
+    width: 60vw;
+    height: auto;
+    min-height: 60px;
+    margin: 20px 10px;
+    resize: none;
+}
+
