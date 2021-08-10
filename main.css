@@ -1,7 +1,14 @@
+@font-face {
+    font-family: 'Menlo-Regular';
+    src: url(./fonts/Menlo-Regular.ttf);
+}
+
 body {
     width:100vw;
     height:100vh;
     background-color: rgb(69,69,69);
+
+    font-family: Menlo-Regular;
 }
 
 .root {
@@ -15,8 +22,20 @@ body {
     align-items: center;
 }
 #chatdiv {
-    justify-content:flex-end;
     align-items: left;
+}
+
+#msgs {
+    margin: 10px;
+    margin-right: 30px;
+    padding: 15px;
+    height: 420px;
+    background-color: black;
+    color: white;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    font-family: Menlo-Regular;
+    font-size: 10pt;
 }
 
 input, textarea {
@@ -31,6 +50,22 @@ input, textarea {
     width:200px;
     height:20px;
 }
+#my_id {
+    width:200px;
+    height:20px;
+    border-style: none;
+}
+#my_id:focus {
+    border-style: solid;
+}
+
+#my_id_div {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: whitesmoke;
+    font-size: 10pt;
+}
 
 .noselect:focus {
     outline:none;
@@ -43,8 +78,9 @@ input, textarea {
 }
 
 #chatbox {
+    position: absolute;
+    bottom: 0px;
     width: 60vw;
-    height: auto;
     min-height: 60px;
     margin: 20px 10px;
     resize: none;

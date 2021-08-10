@@ -1,3 +1,5 @@
+// const { ipcRenderer } = require('electron')
+
 window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector("#connectbtn").addEventListener("click", get_connection)
@@ -12,6 +14,9 @@ const get_connection = async () => {
 
     const element = document.getElementById("connectdiv")
     element.innerHTML = "<p>Connecting...</p>"
+
+    // do connection things
+    window.api.send("startup-connection", id)
 
     window.location = "../html/chat.html"
 }

@@ -2,17 +2,17 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src *">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="../main.css">
+    <script src="../js/peerjs.min.js"></script>
     <title>H3RM3S</title>
   </head>
   <body>
     <div id="chatdiv" class="root">
-      <div id="chatarea">
+      <div id="msgs">
 
       </div>
-
       <script src="../js/chat.js"></script>
       <textarea id="chatbox" class="noselect" type="text" wrap="soft" placeholder="Enter text..."
       autofocus ></textarea>

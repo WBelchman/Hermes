@@ -1,13 +1,18 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
+
+let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      // preload: path.join(__dirname, 'preload.js')
+      nodeIntegration: false,
+      contextIsolation: true,
+      connectSrc: true,
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
@@ -41,3 +46,9 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+ipcMain.on("startup-connection", (event, arg) => {
+  mainWindow.webContents.on('did-finish-load', () => {
+    mainWindow.webContents.send("startup-connection", arg)
+  })
+})
